@@ -22,7 +22,7 @@
             [$this, 'banditInit']
         );
     }
-    private function banditMenu() {
+    public function banditMenu() {
         add_menu_page(
             'Bandit Manchot',
             'Bandit Manchot', // menu_title
@@ -34,11 +34,11 @@
         );
     }
 
-    private function banditInit() {
+    public function banditInit() {
 
     }
 
-    private function my_custom_menu_page(){
+    public function my_custom_menu_page(){
         esc_html_e( 'Admin Page Test', 'textdomain' );	
     }
    }
