@@ -39,7 +39,12 @@
     }
 
     public function my_custom_menu_page(){
-        esc_html_e( 'Admin Page Test', 'textdomain' );	
+
+        echo 
+            '<div class="wrap">
+                <h2>Bandit Manchot</h2>
+            </div>'
+        ;
     }
    }
 
