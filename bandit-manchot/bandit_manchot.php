@@ -85,6 +85,10 @@
 
        public function listTemplatesCallback(): void
        {
+           $all_themes = wp_get_themes();
+           foreach ($all_themes as $theme) {
+               var_dump($theme->get('Name'));
+           }
            printf(
                '<input type="text" name="bandit_option_name[list_of_templates]" id="list_of_templates" value="%s">',
                isset( $this->banditOptions['list_of_templates'] ) ? esc_attr( $this->banditOptions['list_of_templates']) : ''
