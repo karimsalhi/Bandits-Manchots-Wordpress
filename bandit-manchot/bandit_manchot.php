@@ -51,7 +51,7 @@ class BanditManchotPlugin
                 ?>
             </form>
         </div>
-<?php
+        <?php
     }
     public function banditInit(): void
     {
@@ -87,18 +87,9 @@ class BanditManchotPlugin
     {
         $all_themes = wp_get_themes();
         foreach ($all_themes as $theme) {
-            var_dump($theme->get('Name'));
-            printf('
-                    <form>
-                    <div>
-                    <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
-                    <label for="subscribeNews">', $theme->get('Name'), '</label>
-                    </div>
-                    <div>
-                    <button type="submit">Next</button>
-                    </div>
-                </form>
-          ');
+        ?>
+            <input type="checkbox" name="pizza_toppings[]" value="<?php echo $theme ?>" id="pizza_topping_<?php echo $theme ?>" />
+<?php
         }
     }
     public function explorationTries(): void
