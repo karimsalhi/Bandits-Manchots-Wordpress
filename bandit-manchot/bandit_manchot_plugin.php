@@ -88,7 +88,10 @@ class BanditManchotPlugin
         $all_themes = wp_get_themes();
         foreach ($all_themes as $theme) {
         ?>
-            <input type="checkbox" name="pizza_toppings[]" value="<?php echo $theme ?>" id="pizza_topping_<?php echo $theme ?>" />
+            <div>
+                <input type="checkbox" name="themes[]" value="<?php echo $theme->get('Name') ?>" id="theme_<?php echo $theme->get('Name') ?>" />
+                <label for="theme_<?php echo $theme->get('Name') ?>"><?php echo $theme->get('Name') ?></label>
+            </div>
 <?php
         }
     }
