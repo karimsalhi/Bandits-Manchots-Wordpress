@@ -89,7 +89,11 @@ class BanditManchotPlugin
         foreach ($all_themes as $theme) {
         ?>
             <div>
-                <input type="checkbox" name="themes[]" value="<?php echo $theme->get('Name') ?>" id="theme_<?php echo $theme->get('Name') ?>" />
+                <input type="checkbox" name="bandit_option_name[list_of_templates][]" value="<?php echo $theme->get('Name') ?>" id="theme_<?php echo $theme->get('Name') ?>"
+                       <?php
+                       echo isset($this->banditOptions['list_of_templates']) && in_array($theme->get('Name'), $this->banditOptions['list_of_templates'])? "checked" : "";
+                       ?>
+                />
                 <label for="theme_<?php echo $theme->get('Name') ?>"><?php echo $theme->get('Name') ?></label>
             </div>
 <?php
@@ -113,7 +117,7 @@ class BanditManchotPlugin
         }
 
         if (isset($input['list_of_templates'])) {
-            $sanitaryValues['list_of_templates'] = sanitize_text_field($input['list_of_templates']);
+            $sanitaryValues['list_of_templates'] = $input['list_of_templates'];
         }
 
         return $sanitaryValues;
